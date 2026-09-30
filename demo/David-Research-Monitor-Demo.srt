@@ -1,51 +1,203 @@
 1
-00:00:00,000 --> 00:00:13,172
-This is David Research Monitor. Every example in this video is fictional. No personal LinkedIn account, real post, or private browser profile appears in the demonstration.
+00:00:00,300 --> 00:00:02,540
+Welcome to David Research Monitor.
 
 2
-00:00:13,172 --> 00:00:25,414
-On first run, connect DokoBot's local browser bridge and check the connection. If the browser asks you to approve its extension, complete that permission step in the browser.
+00:00:02,580 --> 00:00:04,780
+In the next few minutes, you'll see how it turns
 
 3
-00:00:25,414 --> 00:00:43,766
-Choose how Research Monitor analyzes results. The local LM Studio option stays on your computer. You can instead use an OpenAI API key, or sign in to Codex with an eligible ChatGPT account. The app never saves either credential.
+00:00:04,820 --> 00:00:08,460
+the topics you care about into a focused research brief.
 
 4
-00:00:43,766 --> 00:00:56,158
-In Topics, add the subjects David cares about, then enter useful phrases and exclusions. You can choose sources and set how old results may be and how many to collect.
+00:00:08,660 --> 00:00:11,180
+Everything on screen is fictional sample data.
 
 5
-00:00:56,158 --> 00:01:08,840
-The Schedule tab sets the days, time, topics, and report mode. You can keep a normal analysis run or choose discovery only, then enable monitoring when the setup is ready.
+00:00:12,480 --> 00:00:16,320
+First, connect DokoBot's browser bridge and check the connection.
 
 6
-00:01:08,840 --> 00:01:21,663
-The LinkedIn DokoBot read block starts on. Scheduled scans can still find relevant public search links, but Research Monitor does not ask DokoBot to read those LinkedIn pages.
+00:00:16,880 --> 00:00:19,840
+Research Monitor checks it before each run, so you'll know
 
 7
-00:01:21,663 --> 00:01:36,569
-Turn the block off to allow sequential LinkedIn page reads in scheduled scans and chosen batches. The setting changes Research Monitor, not DokoBot. Review LinkedIn's published restrictions before enabling it.
+00:00:19,920 --> 00:00:23,680
+when it's ready. If your browser requests extension access,
 
 8
-00:01:36,569 --> 00:01:51,656
-For a post David chooses to view, open Capture, select a topic, and paste one or more URLs, one per line. Use DokoBot capture, or copy the visible text yourself and import it.
+00:00:23,840 --> 00:00:24,640
+approve it there.
 
 9
-00:01:51,656 --> 00:02:04,563
-Use Run Now for the complete research and analysis pipeline. Discover links only creates a quicker report without AI. Home shows the latest run status and the report archive.
+00:00:25,940 --> 00:00:28,980
+Next, choose how you want the findings analyzed.
 
 10
-00:02:04,563 --> 00:02:19,635
-At the top of a report, discovered is the number of candidate items. New relevant counts fresh matches. Analyzed counts items handled by the local model, while duplicates show repeated material removed.
+00:00:29,220 --> 00:00:32,740
+Use LM Studio to keep analysis local, bring your own
 
 11
-00:02:19,635 --> 00:02:34,078
-Each card gives the source, topic, relevance, a brief summary, and why it matched. Relevance means fit to your chosen topic. Use Open original to check the underlying source.
+00:00:32,820 --> 00:00:36,340
+OpenAI API key, or sign in to Codex with an
 
 12
-00:02:34,078 --> 00:02:46,650
-The Reports tab opens or exports the standalone HTML file. Bookmark an important item in the table below. Automatic retention keeps bookmarked report items.
+00:00:36,420 --> 00:00:40,660
+eligible ChatGPT account. Research Monitor doesn't save either
 
 13
-00:02:46,650 --> 00:03:02,647
-Start with a small test run and review the source links. If the local model cannot load safely, Research Monitor keeps the discoveries and explains that AI analysis was deferred. The report remains a local HTML file.
+00:00:40,740 --> 00:00:41,540
+credential.
+
+14
+00:00:42,840 --> 00:00:45,160
+Now, add a topic you care about.
+
+15
+00:00:45,400 --> 00:00:48,120
+Give it a few phrases that signal a good match,
+
+16
+00:00:48,160 --> 00:00:50,760
+and exclude terms that create noise.
+
+17
+00:00:50,800 --> 00:00:54,760
+You can also fine-tune its sources, result age, and volume.
+
+18
+00:00:56,060 --> 00:00:58,700
+Set the days and time that work for you, then
+
+19
+00:00:58,780 --> 00:01:00,460
+choose the topics to monitor.
+
+20
+00:01:00,700 --> 00:01:03,980
+You can run the full analysis or collect links first.
+
+21
+00:01:04,220 --> 00:01:06,860
+When you're happy with the setup, enable the schedule.
+
+22
+00:01:08,160 --> 00:01:11,000
+LinkedIn's DokoBot read block starts on.
+
+23
+00:01:11,280 --> 00:01:15,040
+Your scheduled scans can still discover relevant public links,
+
+24
+00:01:15,160 --> 00:01:18,560
+while reads of LinkedIn pages through DokoBot stay blocked.
+
+25
+00:01:19,860 --> 00:01:23,380
+Switch the block off to allow multi-page LinkedIn reads during
+
+26
+00:01:23,460 --> 00:01:27,060
+scheduled scans and for URL batches you choose.
+
+27
+00:01:27,380 --> 00:01:30,900
+This setting controls Research Monitor's requests to DokoBot.
+
+28
+00:01:31,380 --> 00:01:33,780
+Check LinkedIn's rules before enabling it.
+
+29
+00:01:35,080 --> 00:01:36,680
+Already have a post in mind?
+
+30
+00:01:36,920 --> 00:01:40,280
+Open Capture, choose a topic, and add one or more
+
+31
+00:01:40,440 --> 00:01:44,360
+URLs. You can ask DokoBot to capture those pages, or
+
+32
+00:01:44,520 --> 00:01:46,360
+paste the visible text yourself.
+
+33
+00:01:47,660 --> 00:01:51,500
+When you're ready, choose Run Now for discovery and AI
+
+34
+00:01:51,580 --> 00:01:55,900
+analysis. Discover Links Only creates a faster report without
+
+35
+00:01:55,980 --> 00:01:59,340
+AI. On Home, you can follow the run and open
+
+36
+00:01:59,420 --> 00:02:00,540
+earlier reports.
+
+37
+00:02:01,840 --> 00:02:03,920
+The report starts with a quick scorecard.
+
+38
+00:02:04,400 --> 00:02:08,480
+Discovered counts candidate items; New Relevant shows fresh
+
+39
+00:02:08,560 --> 00:02:13,920
+matches. Analyzed counts items reviewed by your chosen AI provider,
+
+40
+00:02:14,000 --> 00:02:18,000
+and Duplicates shows repeated material removed from the results.
+
+41
+00:02:19,300 --> 00:02:23,340
+Each result card shows its source, topic, relevance, and a
+
+42
+00:02:23,380 --> 00:02:25,700
+concise summary of why it matched.
+
+43
+00:02:26,020 --> 00:02:28,180
+Relevance is the fit to your topic.
+
+44
+00:02:28,660 --> 00:02:31,300
+Open Original takes you straight to the source.
+
+45
+00:02:32,600 --> 00:02:36,600
+In Reports, you can open or export the standalone HTML
+
+46
+00:02:36,680 --> 00:02:40,640
+report. Bookmark anything worth keeping in the table below.
+
+47
+00:02:40,920 --> 00:02:44,200
+Bookmarked items remain available through automatic cleanup.
+
+48
+00:02:45,500 --> 00:02:48,540
+For your first run, keep the topic narrow and check
+
+49
+00:02:48,580 --> 00:02:53,660
+a few original links. If AI is temporarily unavailable, Research
+
+50
+00:02:53,740 --> 00:02:57,820
+Monitor preserves the discoveries and explains what was deferred.
+
+51
+00:02:57,900 --> 00:03:00,540
+Your local HTML report is still there.

@@ -1,55 +1,55 @@
-# David Research Monitor — fictional demo transcript
+# David Research Monitor — demo narration
 
-All names, posts, URLs, and report results shown here are fictional sample data.
+Everything shown in the video uses fictional sample data. No personal LinkedIn account, real post, or private browser profile appears.
 
 ## 01. Start here
 
-This is David Research Monitor. Every example in this video is fictional. No personal LinkedIn account, real post, or private browser profile appears in the demonstration.
+Welcome to David Research Monitor. In the next few minutes, you'll see how it turns the topics you care about into a focused research brief. Everything on screen is fictional sample data.
 
 ## 02. Connect the browser
 
-On first run, connect DokoBot's local browser bridge and check the connection. If the browser asks you to approve its extension, complete that permission step in the browser.
+First, connect DokoBot's browser bridge and check the connection. Research Monitor checks it before each run, so you'll know when it's ready. If your browser requests extension access, approve it there.
 
 ## 03. Choose AI analysis
 
-Choose how Research Monitor analyzes results. The local LM Studio option stays on your computer. You can instead use an OpenAI API key, or sign in to Codex with an eligible ChatGPT account. The app never saves either credential.
+Next, choose how you want the findings analyzed. Use LM Studio to keep analysis local, bring your own OpenAI API key, or sign in to Codex with an eligible ChatGPT account. Research Monitor doesn't save either credential.
 
 ## 04. Define interests
 
-In Topics, add the subjects David cares about, then enter useful phrases and exclusions. You can choose sources and set how old results may be and how many to collect.
+Now, add a topic you care about. Give it a few phrases that signal a good match, and exclude terms that create noise. You can also fine-tune its sources, result age, and volume.
 
 ## 05. Set a schedule
 
-The Schedule tab sets the days, time, topics, and report mode. You can keep a normal analysis run or choose discovery only, then enable monitoring when the setup is ready.
+Set the days and time that work for you, then choose the topics to monitor. You can run the full analysis or collect links first. When you're happy with the setup, enable the schedule.
 
 ## 06. LinkedIn block: ON
 
-The LinkedIn DokoBot read block starts on. Scheduled scans can still find relevant public search links, but Research Monitor does not ask DokoBot to read those LinkedIn pages.
+LinkedIn's DokoBot read block starts on. Your scheduled scans can still discover relevant public links, while reads of LinkedIn pages through DokoBot stay blocked.
 
 ## 07. LinkedIn block: OFF
 
-Turn the block off to allow sequential LinkedIn page reads in scheduled scans and chosen batches. The setting changes Research Monitor, not DokoBot. Review LinkedIn's published restrictions before enabling it.
+Switch the block off to allow multi-page LinkedIn reads during scheduled scans and for URL batches you choose. This setting controls Research Monitor's requests to DokoBot. Check LinkedIn's rules before enabling it.
 
 ## 08. Capture chosen posts
 
-For a post David chooses to view, open Capture, select a topic, and paste one or more URLs, one per line. Use DokoBot capture, or copy the visible text yourself and import it.
+Already have a post in mind? Open Capture, choose a topic, and add one or more URLs. You can ask DokoBot to capture those pages, or paste the visible text yourself.
 
 ## 09. Run research
 
-Use Run Now for the complete research and analysis pipeline. Discover links only creates a quicker report without AI. Home shows the latest run status and the report archive.
+When you're ready, choose Run Now for discovery and AI analysis. Discover Links Only creates a faster report without AI. On Home, you can follow the run and open earlier reports.
 
 ## 10. Read the totals
 
-At the top of a report, discovered is the number of candidate items. New relevant counts fresh matches. Analyzed counts items handled by the local model, while duplicates show repeated material removed.
+The report starts with a quick scorecard. Discovered counts candidate items; New Relevant shows fresh matches. Analyzed counts items reviewed by your chosen AI provider, and Duplicates shows repeated material removed from the results.
 
 ## 11. Understand each card
 
-Each card gives the source, topic, relevance, a brief summary, and why it matched. Relevance means fit to your chosen topic. Use Open original to check the underlying source.
+Each result card shows its source, topic, relevance, and a concise summary of why it matched. Relevance is the fit to your topic. Open Original takes you straight to the source.
 
 ## 12. Keep useful items
 
-The Reports tab opens or exports the standalone HTML file. Bookmark an important item in the table below. Automatic retention keeps bookmarked report items.
+In Reports, you can open or export the standalone HTML report. Bookmark anything worth keeping in the table below. Bookmarked items remain available through automatic cleanup.
 
 ## 13. Start with a test run
 
-Start with a small test run and review the source links. If the local model cannot load safely, Research Monitor keeps the discoveries and explains that AI analysis was deferred. The report remains a local HTML file.
+For your first run, keep the topic narrow and check a few original links. If AI is temporarily unavailable, Research Monitor preserves the discoveries and explains what was deferred. Your local HTML report is still there.

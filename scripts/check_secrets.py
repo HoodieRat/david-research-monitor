@@ -16,11 +16,12 @@ DENIED_SUFFIXES = {".db", ".sqlite", ".pem", ".pfx", ".p12", ".key"}
 DENIED_PARTS = {"bin", "obj", "release", "validation", "state", "logs", "cache", ".codex"}
 PATTERNS = {
     "OpenAI key": re.compile(rb"\bsk-(?:proj-)?[A-Za-z0-9_-]{20,}\b"),
+    "ElevenLabs key": re.compile(rb"\bsk_[A-Za-z0-9]{32,}\b"),
     "GitHub token": re.compile(rb"\b(?:ghp|gho|ghs|ghr|github_pat)_[A-Za-z0-9_]{20,}\b"),
     "AWS access key": re.compile(rb"\bAKIA[A-Z0-9]{16}\b"),
     "private key block": re.compile(rb"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
     "credential assignment": re.compile(
-        rb"(?i)\b(?:password|passwd|client_secret|access_token|refresh_token)\s*[:=]\s*['\"]?[A-Za-z0-9+/_-]{20,}"
+        rb"(?i)\b(?:password|passwd|client_secret|access_token|refresh_token|api_key)\s*[:=]\s*['\"]?[A-Za-z0-9+/_-]{20,}"
     ),
     "personal Windows profile path": re.compile(rb"(?i)[A-Z]:\\Users\\(?!Public\\|Default\\)[^\\\s\"']+\\"),
 }
