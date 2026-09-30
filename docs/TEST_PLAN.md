@@ -4,6 +4,7 @@
 - Run `python scripts/check_secrets.py` on the staged Git contents before each push. Confirm that local databases, reports, account state, and generated packages are ignored.
 - Test OpenAI API request construction with a fake HTTP handler and Codex CLI sign-in/structured output with a fake process runner. Live account tests require a user-selected provider and active account access.
 - Run `ResearchMonitor.Diagnostics.exe --full` on the target machine.
+- Build the Windows ZIP with `scripts/Package-Release.ps1`, confirm it contains `scripts/Setup.bat` and the four packaged executables, and scan its contents for credential patterns before attaching it to a release.
 - From the UI, add a topic, run discovery, verify a standalone report, then test with a locally installed 4B model and confirm owned-model unload.
 - Test the LinkedIn block both on and off with a small, explicitly chosen batch before enabling scheduled reads.
 - Test pause/resume, Task Scheduler registration, 45-minute timeout, cancellation, abrupt Worker termination, and restart recovery.

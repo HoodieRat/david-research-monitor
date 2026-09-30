@@ -10,6 +10,8 @@ A Windows desktop app that discovers research for chosen topics, stores findings
 4. Open Research Monitor and complete Setup: browser connection, AI provider, topics, and schedule.
 5. Run a small test scan and open its HTML report from Home or Reports.
 
+For a ready-to-run preview, download the Windows ZIP from this private repository's [Releases](https://github.com/HoodieRat/david-research-monitor/releases), extract it, and run `DavidResearchMonitor/scripts/Setup.bat`. The included `packaging/release` folder contains self-contained executables. DokoBot and the chosen AI provider still need their own setup.
+
 DokoBot is installed separately for browser capture. An AI provider is optional for discovery-only reports. See [AI provider setup](docs/AI_PROVIDERS.md) for the three analysis choices and [architecture](docs/ARCHITECTURE.md) for how runs work.
 
 ## AI choices
@@ -39,6 +41,7 @@ dotnet restore DavidResearchMonitor.sln
 dotnet build DavidResearchMonitor.sln --no-restore
 dotnet test DavidResearchMonitor.sln --no-build
 python scripts/check_secrets.py
+powershell -ExecutionPolicy Bypass -File scripts/Package-Release.ps1
 ```
 
 See the [implementation plan](PLAN.md), [production specification](docs/PRODUCTION_SPEC.md), and [test plan](docs/TEST_PLAN.md). Security issues and private disclosure guidance are in [SECURITY.md](SECURITY.md).
