@@ -107,6 +107,13 @@ public sealed class MonitorTests
         var rows=WebCollector.ParseDokoLinkedInSearch(raw);
         Assert.Single(rows);Assert.Contains("procedural animation",rows[0].Title);
     }
+    [Fact] public void PublicSearchFallbackKeepsMatchingExternalResults()
+    {
+        const string raw="Account [2]\nProcedural animation [24]\nAnimation driven by algorithms.\nOther result [25]\n[2] https://accounts.google.com/\n[24] https://en.wikipedia.org/wiki/Procedural_animation\n[25] https://example.com/other";
+        var topic=new Topic(1,"procedural animation","",50,168,30,true,[new("procedural animation","include")]);
+        var rows=WebCollector.ParseDokoPublicSearch(raw,topic);
+        Assert.Single(rows);Assert.Equal("https://en.wikipedia.org/wiki/Procedural_animation",rows[0].Url);
+    }
     [Fact] public void DokoSessionCleanupPreservesPageText()
     {
         string output="Session: 42\r\nA visible LinkedIn post\r\nAuthor and relevant context\r\n";

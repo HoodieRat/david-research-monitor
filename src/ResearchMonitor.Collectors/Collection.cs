@@ -96,7 +96,43 @@ public sealed class WebCollector : ICollector
             }
             if(list.Count>=topic.MaxResultsPerRun || (source.Type!="rss" && list.Count==before))break;
         }
+        if(list.Count==0 && source.Type=="search" && UseDokoDiscovery && ProcessTool.FindDokoBot() is not null)
+        {
+            string searchUrl="https://www.google.com/search?q="+Uri.EscapeDataString(ContentTools.Query(topic))+"&num=10";
+            string? raw=await ReadWithDokoRawAsync(searchUrl,cancellationToken);
+            if(raw is not null)
+            foreach(var row in ParseDokoPublicSearch(raw,topic).Take(topic.MaxResultsPerRun))
+            {
+                var uri=new Uri(row.Url);
+                list.Add(new Discovery(source.Id,topic.Id,row.Url,ContentTools.Canonicalize(row.Url),row.Title,row.Snippet,
+                    null,DateTimeOffset.UtcNow,SourcePolicy.MayFetch(uri,source,BlockLinkedInReads),ContentTools.Score(topic,row.Title,row.Snippet,row.Url)));
+            }
+        }
         return list;
+    }
+    public static IReadOnlyList<(string Url,string Title,string Snippet)> ParseDokoPublicSearch(string raw,Topic topic)
+    {
+        var lines=raw.Replace("\r","").Split('\n');
+        int references=Array.FindIndex(lines,x=>Regex.IsMatch(x,@"^\[\d+\]\s+https?://"));
+        if(references<0)return [];
+        var results=new List<(string Url,string Title,string Snippet)>();
+        foreach(Match match in Regex.Matches(raw,@"(?m)^\[(\d+)\]\s+(https?://\S+)",RegexOptions.IgnoreCase))
+        {
+            string url=match.Groups[2].Value.TrimEnd(')',']',',');
+            if(!Uri.TryCreate(url,UriKind.Absolute,out var uri)||uri.Scheme is not("http" or "https") ||
+                uri.Host.Equals("google.com",StringComparison.OrdinalIgnoreCase) || uri.Host.EndsWith(".google.com",StringComparison.OrdinalIgnoreCase))continue;
+            string marker="["+match.Groups[1].Value+"]";
+            var titles=lines.Take(references).Where(x=>x.Contains(marker,StringComparison.Ordinal) && !x.StartsWith(marker,StringComparison.Ordinal))
+                .Select(x=>x.Replace(marker,"").Trim(' ','>','-')).Where(x=>x.Length>=8)
+                .OrderByDescending(x=>ContentTools.Score(topic,x,"",url)).ThenByDescending(x=>x.Length).ToArray();
+            if(titles.Length==0)continue;
+            string title=titles[0];
+            int index=Array.FindIndex(lines,0,references,x=>x.Contains(title,StringComparison.Ordinal));
+            string snippet=index<0?"":string.Join(" ",lines.Skip(index+1).Take(4).Where(x=>x.Length>0 && x!="---"));
+            if(ContentTools.Score(topic,title,snippet,url)<=0)continue;
+            results.Add((url,title,snippet.Length>400?snippet[..400]:snippet));
+        }
+        return results.DistinctBy(x=>ContentTools.Canonicalize(x.Url)).ToArray();
     }
     private async Task<IReadOnlyList<Discovery>> DiscoverLinkedInAsync(Topic topic,Source source,CancellationToken token)
     {
@@ -212,7 +248,7 @@ public sealed class WebCollector : ICollector
         var doko=ProcessTool.FindDokoBot()??throw new FileNotFoundException("DokoBot local CLI is unavailable");
         var args=doko.Prefix.Concat(new[]{"read","--local","--timeout","90",url});
         var result=await ProcessTool.RunAsync(doko.File,args,TimeSpan.FromSeconds(100),token);
-        var session=Regex.Match(result.Output,@"(?m)^Session:\s*(\d+)");
+        var session=Regex.Match(result.Output+"\n"+result.Error,@"(?m)^Session:\s*(\d+)");
         if(session.Success)
         {
             try{await ProcessTool.RunAsync(doko.File,doko.Prefix.Concat(new[]{"close",session.Groups[1].Value}),TimeSpan.FromSeconds(10),CancellationToken.None);}catch{}
