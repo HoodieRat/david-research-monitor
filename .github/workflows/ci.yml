@@ -1,0 +1,28 @@
+name: Build and test
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check tracked files for secrets
+        run: python scripts/check_secrets.py
+      - name: Restore
+        run: dotnet restore DavidResearchMonitor.sln
+      - name: Build
+        run: dotnet build DavidResearchMonitor.sln --configuration Release --no-restore
+      - name: Test
+        run: dotnet test DavidResearchMonitor.sln --configuration Release --no-build

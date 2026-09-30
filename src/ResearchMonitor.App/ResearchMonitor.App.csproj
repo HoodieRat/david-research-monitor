@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\ResearchMonitor.Core\ResearchMonitor.Core.csproj" />
+    <ProjectReference Include="..\ResearchMonitor.Data\ResearchMonitor.Data.csproj" />
+    <ProjectReference Include="..\ResearchMonitor.LmStudio\ResearchMonitor.LmStudio.csproj" />
+    <ProjectReference Include="..\ResearchMonitor.OpenAI\ResearchMonitor.OpenAI.csproj" />
+    <ProjectReference Include="..\ResearchMonitor.Diagnostics\ResearchMonitor.Diagnostics.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+</Project>
