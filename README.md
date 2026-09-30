@@ -2,6 +2,12 @@
 
 A Windows desktop app that discovers research for chosen topics, stores findings in SQLite, analyzes them with a selected AI provider, and produces standalone HTML reports. Scheduled scans, source controls, bookmarks, diagnostics, and a user-driven capture screen are included.
 
+## Watch the 3-minute demo
+
+Press play below. The walkthrough uses fictional sample data and shows no personal LinkedIn account. If the player does not appear, [open the dedicated video page on GitHub](https://github.com/HoodieRat/david-research-monitor/issues/1).
+
+https://github.com/user-attachments/assets/86d9e087-6e16-4cd2-a013-df290e6b89be
+
 ## Download and install on Windows
 
 **Start with the [ready-to-run Windows ZIP](https://github.com/HoodieRat/david-research-monitor/releases/download/v0.1.2-preview/DavidResearchMonitor-v0.1.2-preview-win-x64.zip).** The repository is private, so sign in to a GitHub account with access before downloading. Use this release ZIP rather than GitHub's **Code → Download ZIP**, which contains source files.
@@ -12,10 +18,6 @@ A Windows desktop app that discovers research for chosen topics, stores findings
 4. Open **David Research Monitor** from the Windows Start menu. You only need `Setup.bat` for installation; use the Start menu thereafter.
 
 The release is for Windows 10 or 11 x64 and includes the .NET runtime. No programming tools or .NET SDK are needed. DokoBot is installed separately for browser capture; AI is optional for discovery-only reports. See [AI provider setup](docs/AI_PROVIDERS.md) when you are ready for analysis.
-
-## Watch the demo
-
-[**Watch or download the 3-minute MP4 walkthrough**](https://github.com/HoodieRat/david-research-monitor/releases/download/v0.1.2-preview/David-Research-Monitor-Demo.mp4). GitHub may download the MP4 instead of playing it in the browser; open the downloaded file to watch it. The demo uses fictional data and shows no personal LinkedIn account. The [transcript and captions](demo/README.md) are also available.
 
 ## Try a first scan
 
