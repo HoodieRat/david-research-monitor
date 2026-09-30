@@ -1,6 +1,6 @@
 # David Research Monitor demo
 
-Press play below, or [open the dedicated video page on GitHub](https://github.com/HoodieRat/david-research-monitor/issues/1).
+Press play below and use the speaker control to turn on narration, or [open the dedicated video page on GitHub](https://github.com/HoodieRat/david-research-monitor/issues/1).
 
 https://github.com/user-attachments/assets/86d9e087-6e16-4cd2-a013-df290e6b89be
 

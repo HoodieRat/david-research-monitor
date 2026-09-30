@@ -4,7 +4,7 @@ A Windows desktop app that discovers research for chosen topics, stores findings
 
 ## Watch the 3-minute demo
 
-Press play below. The walkthrough uses fictional sample data and shows no personal LinkedIn account. If the player does not appear, [open the dedicated video page on GitHub](https://github.com/HoodieRat/david-research-monitor/issues/1).
+Press play below and use the speaker control to turn on narration. The walkthrough uses fictional sample data and shows no personal LinkedIn account. If the player does not appear, [open the dedicated video page on GitHub](https://github.com/HoodieRat/david-research-monitor/issues/1).
 
 https://github.com/user-attachments/assets/86d9e087-6e16-4cd2-a013-df290e6b89be
 
