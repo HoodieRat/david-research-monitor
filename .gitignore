@@ -5,6 +5,8 @@ packaging/validation/
 .vs/
 .vscode/
 .idea/
+__pycache__/
+*.pyc
 *.user
 *.suo
 *.log
