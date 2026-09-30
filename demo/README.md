@@ -1,5 +1,7 @@
 # David Research Monitor demo
 
+**[Watch or download the demo MP4](https://github.com/HoodieRat/david-research-monitor/releases/download/v0.1.2-preview/David-Research-Monitor-Demo.mp4).** If GitHub downloads the file, open it from your Downloads folder.
+
 The MP4 is a narrated, 3 minute walkthrough of the Windows app. It speaks directly to the viewer and covers setup, AI provider choice, topics, scheduling, the LinkedIn read switch, chosen-content capture, running research, and reading and saving results. The voiceover was generated with ElevenLabs v4 using the Bella professional voice; the audio is leveled for clear playback.
 
 Privacy: the app was launched with an isolated sample SQLite database. Every topic, source, post, and report shown is fictional. No personal LinkedIn account or browser profile was opened or recorded. The recording captures only the Research Monitor window, and sample file paths are masked in the finished video.
