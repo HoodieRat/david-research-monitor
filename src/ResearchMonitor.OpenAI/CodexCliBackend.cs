@@ -30,7 +30,13 @@ public sealed class CodexCliBackend : IModelBackend
         }
         try
         {
-            var result = await _run(["login", "status"], null, cancellationToken);
+            // Some desktop Codex settings (for example service_tier="default") are
+            // newer than an installed CLI. Override that setting for this sign-in
+            // check; the analysis command below already ignores user config.
+            string[] statusArgs = _usingInstalled
+                ? ["-c", "service_tier=\"flex\"", "login", "status"]
+                : ["login", "status"];
+            var result = await _run(statusArgs, null, cancellationToken);
             if (result.ExitCode != 0 || !result.Output.Contains("using ChatGPT", StringComparison.OrdinalIgnoreCase))
             {
                 DeferredReason = "Sign in to Codex CLI with a ChatGPT account first";
@@ -121,7 +127,9 @@ public sealed class CodexCliBackend : IModelBackend
         try { await process.WaitForExitAsync(token); }
         catch (OperationCanceledException) { try { process.Kill(entireProcessTree: true); } catch { } throw; }
         string output = await stdout;
-        _ = await stderr; // Never surface source text or CLI diagnostics containing private data.
-        return (process.ExitCode, output);
+        string error = await stderr;
+        // `codex login status` prints its status on stderr, including on success.
+        // Keep analysis diagnostics private; only the sign-in probe reads stderr.
+        return (process.ExitCode, args.Contains("login") && args.Contains("status") ? error : output);
     }
 }
